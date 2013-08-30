@@ -51,7 +51,7 @@ class AntiOffensiveString
     begin
       env['rack.input'].rewind
     rescue Errno::ESPIPE
-      env['rack.input'] = StringIO.new(inpuit, "r")
+      env['rack.input'] = StringIO.new(input, "r")
     end
 
     @app.call(env)
